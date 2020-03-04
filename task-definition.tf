@@ -4,12 +4,12 @@ data "aws_ecs_task_definition" "default" {
 }
 */
 resource "aws_ecs_task_definition" "default" {
-    family                = "nginx"
+    family                = "bulbapp"
     container_definitions = <<DEFINITION
 [
   {
-    "name": "nginx",
-    "image": "alapatra/helloapp-nginx:v1",
+    "name": "bulbapp",
+    "image": "585386342075.dkr.ecr.us-east-1.amazonaws.com/nginx/proxy:latest",
     "essential": true,
     "portMappings": [
       {
